@@ -584,6 +584,10 @@ TextInputWidget::command(QString command, QString args)
                 sendTextMessage(" ┯━┯╭( º _ º╭)");
         } else if (command == "sovietflip") {
                 sendTextMessage("ノ┬─┬ノ ︵ ( \\o°o)\\");
+	} else if (command == "clearcache") {
+		cache::deleteData();
+		ChatPage::instance()->getProfileInfo();
+		ChatPage::instance()->tryInitialSync();
         }
 }
 
